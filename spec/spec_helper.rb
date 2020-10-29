@@ -15,4 +15,5 @@ VCR.configure do |config|
   config.cassette_library_dir = spec_path + 'vcr_cassettes'
   config.filter_sensitive_data('TEST_USERNAME') { ENV['TEST_USERNAME'] }
   config.filter_sensitive_data('TEST_PASSWORD') { ENV['TEST_PASSWORD'] }
+  config.filter_sensitive_data('TEST_API_KEY') { ENV['TEST_API_KEY'] }
 end

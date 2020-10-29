@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://services.qa.dhlparcel.co.uk/v2/products/parcels/deliveryProducts?countryCode=USA&doorstepOnly=true&height=15&length=20&recipientAddressType=residential&recipientPostcode=62236&weight=5.23&width=10
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.5.5 (2019-03-15))
+      Accept:
+      - "*/*"
+      Date:
+      - Thu, 29 Oct 2020 15:12:31 GMT
+      X-Api-Key:
+      - ''
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Accept:
+      - "*/*"
+      Www-Authenticate:
+      - APIKey Realm = 'APIGateway'
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.5.5 (2019-03-15))
+      Host:
+      - services.qa.dhlparcel.co.uk
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '369'
+    body:
+      encoding: UTF-8
+      string: |-
+        {"Exception":"[
+          {
+            "errors": [
+              {
+                "title": " Unable to identify the application for the request",
+                "detail": "API Gateway encountered an error. Request Details - Service: ProductsAPI, Operation: /deliveryProducts, Invocation Time: 15:12:31, Date: 29-Oct-2020,  Client IP: 10.217.36.10, User: Default and Application: null"
+              }
+            ]
+          }
+        ]"}
+    http_version:
+  recorded_at: Thu, 29 Oct 2020 15:12:32 GMT
+recorded_with: VCR 5.1.0
